@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CreateNote"
+    android:background="@color/black">
+    <ImageView
+        app:srcCompat="@drawable/ic_baseline_arrow_back_ios_24"
+        android:id="@+id/back"
+        app:tint="@color/white"
+        android:elevation="10dp"
+        android:background="@null"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:text="Add Note"
+        android:onClick="back"
+        android:layout_margin="16dp"
+        android:textSize="16sp" />
+    <EditText
+        android:id="@+id/inputTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        app:layout_constraintTop_toBottomOf="@id/back"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:hint="Enter Title"
+        android:textColorHint="@color/white"
+        android:textColor="@color/white"
+        android:layout_margin="16dp"
+        android:textSize="16sp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/dateAndTime"
+        tools:text="12-12-2021"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/inputTitle"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/l1"/>
+    <LinearLayout
+        android:id="@+id/l1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/dateAndTime"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/inputNote"
+        android:orientation="horizontal">
+
+        <View
+            android:id="@+id/colorView"
+            android:layout_width="5dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="5dp"
+            android:background="@color/purple_200"
+            android:layout_marginLeft="5dp" />
+        <EditText
+            android:id="@+id/inputSubTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/dateAndTime"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/inputNote"
+            android:layout_margin="16dp"
+            android:textSize="16sp"
+            android:hint="Enter Sub-Title"
+            android:textColorHint="@color/white"
+            android:textColor="@color/white"/>
+    </LinearLayout>L
+    <EditText
+        android:id="@+id/inputNote"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/l1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_margin="16dp"
+        android:textSize="16sp"
+        android:hint="Enter Note Description"
+        android:textColorHint="@color/white"
+        android:textColor="@color/white"
+        android:inputType="textMultiLine"/>
+    <ImageView
+        app:srcCompat="@drawable/ic_baseline_save_24"
+        android:id="@+id/button"
+        app:tint="@color/white"
+        android:elevation="10dp"
+        android:background="@null"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:onClick="submitData"
+        android:layout_margin="16dp"
+        android:textSize="16sp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
